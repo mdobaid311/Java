@@ -14,14 +14,41 @@ public class Array {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        int[] A = {1,2,3,4,5};
-        int temp=A[0];
-        for(int i=0;i<A.length-1;i++){
-            A[i]=A[i+1];
+        int A[][] = {{3,5,9},{7,6,2},{4,3,5}};
+        int B[][] = {{1,0,0},{0,1,0},{0,0,1}};
+        
+        matrixMultiplication(A, B);
+    }
+    
+    public static void matrixMultiplication(int A[][],int B[][]){
+      int C[][]=new int[3][3];
+          for(int i=0;i<3;i++){
+            for(int j=0;j<3;j++){
+                C[i][j]=0;
+                for(int k=0;k<3;k++){
+                    C[i][j]=C[i][j]+A[i][k]*B[k][j];                    
+                }
+            }
         }
-        A[A.length-1] = temp;
-        for(int x : A){
-            System.out.print(x+" ");
+          for(int i=0;i<3;i++){
+              for(int j=0;j<3;j++){
+                  System.out.print(C[i][j]);
+              }
+              System.out.println("");
+          }
+    }
+    
+    public void matrixAddition(int A[][],int B[][]){
+        
+        for(int i=0;i<3;i++){
+            for(int j=0;j<3;j++){
+                System.out.println(A[i][j]+B[i][j]);
+            }
+            System.out.println("");
         }
-        }
+    }
+    
+    public void matrixSubtraction(){
+        
+    }
 }
