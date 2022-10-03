@@ -5,6 +5,15 @@ class Rectangle{
     public int length;
     public int breadth;
     
+    public Rectangle(){
+        length=1;
+        breadth=1;
+    }
+    public Rectangle(int l,int b){
+        length=l;
+        breadth=b;
+    }
+    
     public int getArea(){
         return length*breadth;
     }
@@ -16,15 +25,9 @@ class Rectangle{
 
 public class Classes {
     public static void main(String[] args) {
-        Rectangle r1= new Rectangle();
-        r1.length=10;
-        r1.breadth=5;
+        Rectangle r1= new Rectangle(10,6);
+        
         System.out.println(r1.getArea());
-        System.out.println(r1.getPerimeter());
-        Rectangle r2= new Rectangle();
-        r2.length=12;
-        r2.breadth=7;
-        System.out.println(r2.getArea());
-        System.out.println(r2.getPerimeter());
-    }  
+        
+    }
 }
