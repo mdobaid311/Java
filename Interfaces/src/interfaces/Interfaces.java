@@ -1,20 +1,33 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
- */
 package interfaces;
 
-/**
- *
- * @author mdoba
- */
+interface Test {
+    void meth1();
+    void meth2();
+}
+
+class My implements Test{
+    @Override
+    public void meth1(){
+        System.out.println("Meth1");
+    }
+    
+    @Override
+    public void meth2(){
+        System.out.println("Meth2");
+    }
+    
+    public void meth3(){
+        System.out.println("Meth3");
+    }
+}
+
 public class Interfaces {
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
-        // TODO code application logic here
+        Test t = new My();
+        t.meth1();
+        t.meth2();
+        t.meth2();
     }
     
 }
