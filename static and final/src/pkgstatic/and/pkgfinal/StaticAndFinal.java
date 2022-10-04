@@ -34,7 +34,14 @@ class Test{
     
 }
 
+class Test1 {
+    public final void show(){
+        System.out.println("Hello");
+    }
+}
 
+class Test2 extends Test1{
+}
 
 public class StaticAndFinal {
     final float PI=3.1425f;
@@ -48,7 +55,7 @@ public class StaticAndFinal {
 //        c.display();
 //        c.meth();
         
-    }
+     }
     
 
 }
