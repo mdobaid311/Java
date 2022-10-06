@@ -1,10 +1,12 @@
 package multithreading;
-class MyThread implements Runnable{
+class MyThread extends Thread{
     @Override
     public void run(){
-        for(int i=0;;i++){
-            System.out.println("Haula");
-        }
+        System.out.println("Hello");
+    }
+    
+    public MyThread(String name){
+        super(name);
     }
 }
 
@@ -12,14 +14,16 @@ class MyThread implements Runnable{
 public class MultiThreading {
 
     public static void main(String[] args) {
-        MyThread t = new MyThread();
-        Thread th = new Thread(t);
-        th.start();
-        for(int i=0;;i++){
-            System.out.println("Omer");
-        }
-        
-         
+        MyThread t = new MyThread("My thread 1");
+        t.start();
+        System.out.println(t.getState());
+        System.out.println("world");
+        System.out.println(t.getClass());
+        System.out.println(t.getId());
+        System.out.println(t.getName());
+        System.out.println(t.getPriority());
+        t.setName("new name");
+        System.out.println(t.getName());
     }
     
 }
