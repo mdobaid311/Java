@@ -22,7 +22,7 @@ class ATM
         System.out.println(amount);
         
     }
-}
+} 
 
 class Customer extends Thread
 {
