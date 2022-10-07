@@ -26,6 +26,10 @@ enum Dept{
 
 public class Enum {
     
+    public Enum(){
+        
+    }
+    
     public static void main(String[] args) {
         Dept d = Dept.CS;
         System.out.println(d.getClass()); 
@@ -34,6 +38,8 @@ public class Enum {
         d.display();
         System.out.println(d.headName());
         System.out.println(d.location());
+        Class c=Enum.class;
+        System.out.println(Arrays.toString(c.getMethods()));
    }
     
 }
