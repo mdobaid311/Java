@@ -1,15 +1,28 @@
 package lambda.function;
 
+@FunctionalInterface
 interface MyLambda{
     public void display();
+}
+
+class UseLambda{
+    public void callLambda(MyLambda ml){
+        ml.display();
+    }
+}
+
+class Demo{
+    public void method1(){
+        UseLambda ul = new UseLambda();
+        ul.callLambda(()->{System.out.println("Hello");});
+    }
 }
 
 public class LambdaFunction {
 
     public static void main(String[] args) {
-        MyLambda m = ()->{
-        System.out.println("hello world");};
-        m.display();
+        Demo d = new Demo();
+        d.method1();
     }
     
 }
