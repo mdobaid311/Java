@@ -157,18 +157,18 @@ public class Organization {
         
         while(true){
             System.out.println("Select option: ");
-            System.out.println("1. Student operations\n2.Course operations\n3. Lecturer Operations");
+            System.out.println("1.Student operations\n2.Course operations\n3.Lecturer Operations");
             Scanner sc = new Scanner(System.in);
             int choice = sc.nextInt();
             College college = new College("MJCET");
             
             switch(choice){
-                case 1:
+                case 1 -> {
                     System.out.println("Select option: ");
-                    System.out.println("1. Add student\n 2. Remove Student\n 3.Get student marks");
+                    System.out.println("1. Add student\n2. Remove Student\n3.Get student marks");
                     int studentChoice = sc.nextInt();
                     switch(studentChoice){
-                        case 1:
+                        case 1 -> {
                             System.out.println("Enter student name: ");
                             String name =sc.nextLine();
                             System.out.println("Enter student age: ");
@@ -179,9 +179,16 @@ public class Organization {
                             String street =sc.nextLine();
                             Address address = new Address(street, city);
                             college.admitStudent(name, age, address);
+                        }
                     }
+                }
+
             }
         }
+        
+    }
+    
+    public void addStudent(){
         
     }
     
