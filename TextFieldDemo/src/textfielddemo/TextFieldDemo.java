@@ -11,7 +11,7 @@ class MyFrame extends Frame implements TextListener,ActionListener{
     public MyFrame(){
         l1= new Label("Enter text in the text field");
         l2= new Label("Hit enter to change text");
-        tf= new TextField();
+        tf= new TextField(20);
         tf.setEchoChar('*');
         
         tf.addTextListener(this);
@@ -25,23 +25,22 @@ class MyFrame extends Frame implements TextListener,ActionListener{
     
     @Override
     public void textValueChanged(TextEvent e) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        l1.setText(tf.getText());
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+         l2.setText(tf.getText());
     }
     
 }
 
 public class TextFieldDemo {
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
-        // TODO code application logic here
+        MyFrame f = new MyFrame();
+        f.setSize(400,400);
+        f.setVisible(true);
     }
     
 }
